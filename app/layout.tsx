@@ -1,7 +1,8 @@
-import { Navbar } from "@/components/common";
+import { Footer, Navbar } from "@/components/common";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Overpass } from "next/font/google";
+import { ThemeProvider } from "./theme-provider";
 
 const overpass = Overpass({ subsets: ["latin"] });
 
@@ -17,9 +18,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={overpass.className}>
-        <Navbar />
-        {children}
+      <body className={`${overpass.className} dark:bg-darkBg`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

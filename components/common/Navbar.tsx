@@ -1,12 +1,29 @@
+"use client";
+
 import React from "react";
 import { MobileNav } from ".";
 import Image from "next/image";
 import { PrimaryButton } from "../ui";
+import { useScrollDirection } from "@/hooks";
 
 const Navbar = () => {
+  const { scrollDirection, beyondNavbar } = useScrollDirection();
+
+  let navStyles = "translate-y-0";
+
+  if (beyondNavbar) {
+    if (scrollDirection === "DOWN") {
+      navStyles = "-translate-y-full"; // hides the navbar
+    } else {
+      navStyles = "translate-y-0"; // shows the navbar
+    }
+  }
+
   return (
-    <div>
-      <nav className="hidden md:block bg-darkPurple p-[1.25rem]">
+    <>
+      <nav
+        className={`hidden md:block bg-darkPurple p-[1.25rem] dark:bg-blue-300 md:sticky left-0 right-0 top-0 z-10 transition-transform duration-300 ease-out ${navStyles}`}
+      >
         <div className="container mx-auto flex justify-between items-center">
           <Image
             alt="Anilist Logo"
@@ -19,13 +36,15 @@ const Navbar = () => {
 
           <div className="flex gap-[2rem]">
             <button className="text-gray-300">Login</button>
-            <PrimaryButton customStyles="rounded-lg">Sign Up</PrimaryButton>
+            <PrimaryButton customStyles="rounded-lg transform transition-transform duration-200 hover:scale-105 focus:outline-none">
+              Sign Up
+            </PrimaryButton>
           </div>
         </div>
       </nav>
 
       <MobileNav />
-    </div>
+    </>
   );
 };
 

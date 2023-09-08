@@ -5,12 +5,12 @@ import { FaAngleRight } from "react-icons/fa";
 
 const Hero = () => {
   return (
-    <div className="bg-blue-500 max-w-[70rem] m-auto md:mt-[2rem] rounded-none md:rounded-2xl p-[3.5rem] text-center">
+    <div className="bg-blue-500 max-w-[70rem] m-auto md:mt-[2rem] rounded-none md:rounded-2xl px-[1rem] md:px-[6rem] py-[3.5rem] text-center mb-[10rem]">
       <h1 className="text-white font-bold text-2xl">
         The next-generation anime platform
       </h1>
 
-      <p className="text-blue-100 mt-[1rem] w-[50%] mx-auto font-light text-xl">
+      <p className="text-blue-100 mt-[1rem] w-[80%] md:w-[50%] mx-auto font-light text-xl">
         Track, share, and discover your favorite anime and manga with AniList.
       </p>
 

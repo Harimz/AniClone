@@ -20,7 +20,7 @@ const PrimaryButton = ({
       type={type || "button"}
       onClick={handleClick}
       disabled={disabled}
-      className={`bg-gradient-to-br from-blue-200 to-blue-200 text-white px-6 py-3 h-[2.75rem] font-bold transform transition-transform duration-200 hover:scale-105 focus:outline-none hover:shadow-blue-lg ${customStyles}`}
+      className={`bg-gradient-to-br from-blue-200 to-blue-200 text-white px-6 py-3 h-[2.75rem] font-bold hover:shadow-blue-lg ${customStyles}`}
     >
       {children}
     </button>
