@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Overpass } from "next/font/google";
 import { ThemeProvider } from "./theme-provider";
+import Provider from "@/redux/provider";
 
 const overpass = Overpass({ subsets: ["latin"] });
 
@@ -19,11 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${overpass.className} dark:bg-darkBg`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Navbar />
-          {children}
-          <Footer />
-        </ThemeProvider>
+        <Provider>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <Navbar />
+            {children}
+            <Footer />
+          </ThemeProvider>
+        </Provider>
       </body>
     </html>
   );
