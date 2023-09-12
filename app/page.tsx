@@ -2,27 +2,21 @@
 
 import { Hero } from "@/components/common";
 import CardDisplay from "@/components/common/CardDisplay";
-import { Spinner } from "@/components/ui";
-import {
-  useFetchAiringAnimeData,
-  useFetchFavoriteAnimeData,
-  useFetchPopAnimeData,
-  useFetchUpcomingAnimeData,
-} from "@/hooks";
-import {
-  GetTrendingAnimeArgs,
-  useGetTopAnimeByFilterQuery,
-} from "@/redux/features/animeApiSlice";
-import { TrendingAnimeResponse } from "@/types";
+import { useFetchAnimeData } from "@/hooks";
 
 export default function Home() {
-  const { data: airingData, isLoading: airingIsLoading } =
-    useFetchAiringAnimeData();
-  const { data: popData, isLoading: popIsLoading } = useFetchPopAnimeData(400);
+  const { data: airingData, isLoading: airingIsLoading } = useFetchAnimeData(
+    0,
+    "upcoming"
+  );
+  const { data: popData, isLoading: popIsLoading } = useFetchAnimeData(
+    800,
+    "bypopularity"
+  );
   const { data: upcomingData, isLoading: upcomingIsLoading } =
-    useFetchUpcomingAnimeData(800);
+    useFetchAnimeData(1200, "upcoming");
   const { data: favoriteData, isLoading: favoriteIsLoading } =
-    useFetchFavoriteAnimeData(1200);
+    useFetchAnimeData(1800, "favorite");
 
   return (
     <main>
@@ -70,7 +64,7 @@ export default function Home() {
         <div className="mb-[4rem]">
           <div className="flex justify-between mb-[1rem]">
             <h2 className="text-gray-450 font-semibold text-lg">
-              FAN FAVORITES
+              ALL TIME POPULAR
             </h2>
             <p className="text-gray-450 text-sm">View All</p>
           </div>
