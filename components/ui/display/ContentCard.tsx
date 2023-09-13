@@ -1,26 +1,32 @@
 import React from "react";
-import { Anime } from "@/types/animeTypes";
+import { Anime } from "@/types/trendingAnimeTypes";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Props {
   data: Anime;
+  type: string;
 }
 
-const ContentCard = ({ data }: Props) => {
+const ContentCard = ({ data, type }: Props) => {
+  const title = data.title.replace(/\s+/g, "-");
+
   return (
-    <div className="w-full sm:max-w-[15rem] cursor-pointer">
-      <div className="relative w-full h-[10rem] sm:h-[20rem]">
-        <Image
-          layout="fill"
-          objectFit="cover"
-          src={data.images.jpg.large_image_url || ""}
-          alt={data.title}
-        />
+    <Link href={`/${type}/${data.mal_id}/${title}`} passHref>
+      <div className="w-full sm:max-w-[15rem] cursor-pointer">
+        <div className="relative w-full h-[10rem] sm:h-[20rem]">
+          <Image
+            layout="fill"
+            objectFit="cover"
+            src={data.images.jpg.large_image_url || ""}
+            alt={data.title}
+          />
+        </div>
+        <p className="text-gray-600 mt-[1rem] text-xs sm:text-sm font-semibold truncate ">
+          {data.title}
+        </p>
       </div>
-      <p className="text-gray-600 mt-[1rem] text-xs sm:text-sm font-semibold truncate ">
-        {data.title}
-      </p>
-    </div>
+    </Link>
   );
 };
 

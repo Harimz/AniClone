@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${overpass.className} dark:bg-darkBg`}>
+      <body className={`${overpass.className} bg-gray-100 dark:bg-darkBg`}>
         <Provider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <Navbar />

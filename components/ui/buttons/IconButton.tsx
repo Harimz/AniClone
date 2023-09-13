@@ -8,7 +8,7 @@ interface Props {
   type?: "button" | "submit";
 }
 
-const SecondaryButton = ({
+const IconButton = ({
   children,
   customStyles,
   handleClick,
@@ -20,11 +20,11 @@ const SecondaryButton = ({
       type={type || "button"}
       disabled={disabled}
       onClick={handleClick}
-      className={`p-[0.75rem] bg-blue-150 rounded-[0.20rem] text-white font-thin ${customStyles} cursor-pointer`}
+      className={`p-[0.75rem] rounded-[0.20rem] text-white font-thin ${customStyles} cursor-pointer`}
     >
       {children}
     </button>
   );
 };
 
-export default SecondaryButton;
+export default IconButton;

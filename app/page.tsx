@@ -34,6 +34,7 @@ export default function Home() {
             data={airingData?.data}
             max={6}
             isLoading={airingIsLoading}
+            type="anime"
           />
         </div>
 
@@ -44,7 +45,12 @@ export default function Home() {
             </h2>
             <p className="text-gray-450 text-sm">View All</p>
           </div>
-          <CardDisplay data={popData?.data} max={6} isLoading={popIsLoading} />
+          <CardDisplay
+            data={popData?.data}
+            max={6}
+            isLoading={popIsLoading}
+            type="anime"
+          />
         </div>
 
         <div className="mb-[4rem]">
@@ -58,6 +64,7 @@ export default function Home() {
             data={upcomingData?.data}
             max={6}
             isLoading={upcomingIsLoading}
+            type="anime"
           />
         </div>
 
@@ -72,6 +79,7 @@ export default function Home() {
             data={favoriteData?.data}
             max={6}
             isLoading={favoriteIsLoading}
+            type="anime"
           />
         </div>
       </div>

@@ -5,6 +5,7 @@ import { MobileNav } from ".";
 import Image from "next/image";
 import { PrimaryButton } from "../ui";
 import { useScrollDirection } from "@/hooks";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
   const { scrollDirection, beyondNavbar } = useScrollDirection();
@@ -22,7 +23,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`hidden md:block bg-darkPurple p-[1.25rem] dark:bg-blue-300 md:sticky left-0 right-0 top-0 z-10 transition-transform duration-300 ease-out ${navStyles}`}
+        className={`hidden md:block absolute bg-darkPurple p-[1.25rem] dark:bg-blue-300 md:sticky left-0 right-0 top-0 z-10 transition-transform duration-300 ease-out ${navStyles}`}
       >
         <div className="container mx-auto flex justify-between items-center">
           <Image
