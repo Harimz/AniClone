@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 import { IconButton, SecondaryButton } from "../ui";
 import { FaHeart } from "react-icons/fa";
 import { FiChevronDown } from "react-icons/fi";
+import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 interface Props {
   title: string | any;
@@ -11,6 +15,31 @@ interface Props {
 }
 
 const DetailsHero = ({ title, synopsis, image }: Props) => {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const updateUrl = (value: string) => {
+    const currentPathParts = pathname.split("/");
+    const predefinedPaths = [
+      "watch",
+      "characters",
+      "staff",
+      "reviews",
+      "stats",
+    ];
+
+    if (
+      predefinedPaths.includes(currentPathParts[currentPathParts.length - 1])
+    ) {
+      currentPathParts[currentPathParts.length - 1] = value;
+    } else {
+      currentPathParts.push(value);
+    }
+
+    const newPath = currentPathParts.join("/");
+    router.push(newPath, { scroll: false });
+  };
+
   return (
     <div className="bg-white dark:bg-blue-400">
       <div className="max-w-[90rem] w-[90%] mx-auto md:flex  lg:max-h-[20rem]">
@@ -46,13 +75,43 @@ const DetailsHero = ({ title, synopsis, image }: Props) => {
               </p>
             </div>
 
-            <ul className="flex justify-center gap-[1rem] lg:gap-[4rem] overflow-scroll md:overflow-hidden mt-[2rem] text-gray-400 ">
-              <li>Overview</li>
-              <li>Watch</li>
-              <li>Characters</li>
-              <li>Staff</li>
-              <li>Reviews</li>
-              <li>Stats</li>
+            <ul className="flex font-thin justify-center gap-[1rem] lg:gap-[4rem] overflow-scroll md:overflow-hidden mt-[2rem] text-gray-400 ">
+              <li
+                className="cursor-pointer hover:text-blue-150"
+                onClick={() => updateUrl("")}
+              >
+                Overview
+              </li>
+              <li
+                className="cursor-pointer hover:text-blue-150"
+                onClick={() => updateUrl("watch")}
+              >
+                Watch
+              </li>
+              <li
+                className="cursor-pointer hover:text-blue-150"
+                onClick={() => updateUrl("characters")}
+              >
+                Characters
+              </li>
+              <li
+                className="cursor-pointer hover:text-blue-150"
+                onClick={() => updateUrl("staff")}
+              >
+                Staff
+              </li>
+              <li
+                className="cursor-pointer hover:text-blue-150"
+                onClick={() => updateUrl("reviews")}
+              >
+                Reviews
+              </li>
+              <li
+                className="cursor-pointer hover:text-blue-150"
+                onClick={() => updateUrl("stats")}
+              >
+                Stats
+              </li>
             </ul>
           </div>
         </div>

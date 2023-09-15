@@ -3,3 +3,5 @@ export { default as MobileNav } from "./MobileNav";
 export { default as Footer } from "./Footer";
 export { default as Hero } from "./Hero";
 export { default as DetailsHero } from "./DetailsHero";
+export { default as DetailsSidebar } from "./DetailsSidebar";
+export { default as DetailsCharacters } from "./DetailsCharacters";
