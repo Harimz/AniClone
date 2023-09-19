@@ -1,4 +1,10 @@
-import { TrendingAnimeResponse, Anime, AnimePicturesResponse } from "@/types";
+import {
+  TrendingAnimeResponse,
+  Anime,
+  AnimePicturesResponse,
+  AnimeCharacterData,
+  AnimeStaffData,
+} from "@/types";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export type GetTrendingAnimeArgs = {};
@@ -16,11 +22,11 @@ export const animeApi = createApi({
     getAnimeDetails: builder.query<Anime, any>({
       query: (id) => `/anime/${id}/full`,
     }),
-    getAnimePictures: builder.query<AnimePicturesResponse, any>({
-      query: (id) => `/anime/${id}/pictures`,
+    getAnimeCharacters: builder.query<AnimeCharacterData, any>({
+      query: (id) => `/anime/${id}/characters`,
     }),
-    getAnimeCharacters: builder.query<Anime, any>({
-      query: (id) => `/anime/${id}/full`,
+    getAnimeStaff: builder.query<AnimeStaffData, any>({
+      query: (id) => `/anime/${id}/staff`,
     }),
     getAnimeStatistics: builder.query<Anime, any>({
       query: (id) => `/anime/${id}/full`,
@@ -31,14 +37,12 @@ export const animeApi = createApi({
     getAnimeEpisodes: builder.query<Anime, any>({
       query: (id) => `/anime/${id}/full`,
     }),
-    getAnimeStaff: builder.query<Anime, any>({
-      query: (id) => `/anime/${id}/full`,
-    }),
   }),
 });
 
 export const {
   useGetTopAnimeByFilterQuery,
   useGetAnimeDetailsQuery,
-  useGetAnimePicturesQuery,
+  useGetAnimeCharactersQuery,
+  useGetAnimeStaffQuery,
 } = animeApi;

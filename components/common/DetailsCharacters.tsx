@@ -1,7 +1,14 @@
+import { AnimeCharacterData } from "@/types";
 import React from "react";
 
-const DetailsCharacters = () => {
-  return <div>DetailsCharacters</div>;
+interface Props {
+  data: AnimeCharacterData | null;
+}
+
+const DetailsCharacters = ({ data }: Props) => {
+  console.log(data?.data);
+
+  return <div></div>;
 };
 
 export default DetailsCharacters;

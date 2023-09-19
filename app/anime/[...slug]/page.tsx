@@ -1,10 +1,13 @@
 "use client";
 
-import { DetailsHero, DetailsSidebar } from "@/components/common";
 import {
-  useGetAnimeDetailsQuery,
-  useGetAnimePicturesQuery,
-} from "@/redux/features/animeApiSlice";
+  DetailsCharacters,
+  DetailsHero,
+  DetailsRelations,
+  DetailsSidebar,
+} from "@/components/common";
+import { useFetchAnimeCharacters, useFetchAnimeStaff } from "@/hooks";
+import { useGetAnimeDetailsQuery } from "@/redux/features/animeApiSlice";
 import { Anime } from "@/types";
 import Image from "next/image";
 import React from "react";
@@ -12,13 +15,14 @@ import React from "react";
 const AnimeDetailsPage = ({ params }: { params: { slug: string } }) => {
   const animeId = params.slug[0];
   const { data, isLoading, error } = useGetAnimeDetailsQuery(animeId);
-  const {
-    data: picturesData,
-    isLoading: picturesIsLoading,
-    error: picturesError,
-  } = useGetAnimePicturesQuery(animeId);
+  const { data: charactersData, isLoading: charactersLoading } =
+    useFetchAnimeCharacters(0, +animeId);
+  const { data: staffData, isLoading: staffLoading } = useFetchAnimeStaff(
+    0,
+    +animeId
+  );
 
-  if (isLoading || picturesIsLoading) {
+  if (isLoading || charactersLoading || staffLoading) {
     return "Loading...";
   }
 
@@ -39,7 +43,12 @@ const AnimeDetailsPage = ({ params }: { params: { slug: string } }) => {
       <div className="max-w-[90rem] w-[90%] mx-auto md:flex gap-[2rem]">
         <DetailsSidebar data={data} />
 
-        {displayType == undefined && <div>OVERVIEW</div>}
+        {displayType == undefined && (
+          <>
+            <DetailsRelations data={data} />
+            <DetailsCharacters data={charactersData} />
+          </>
+        )}
         {displayType == "watch" && <div>WATCH</div>}
         {displayType == "characters" && <div>CHARACTERS</div>}
         {displayType == "staff" && <div>STAFF</div>}

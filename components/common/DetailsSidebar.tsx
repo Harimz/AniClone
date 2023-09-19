@@ -9,8 +9,6 @@ interface Props {
 const DetailsSidebar = ({ data }: Props) => {
   const animeDetails = data?.data;
 
-  console.log(animeDetails?.title_synonyms);
-
   return (
     <div className="mt-[2rem] md:w-[15rem]">
       <div className="hidden md:block">
@@ -35,7 +33,7 @@ const DetailsSidebar = ({ data }: Props) => {
         </div>
       </div>
 
-      <div className="bg-white dark:bg-blue-400 text-gray-400 p-[1rem] flex md:block overflow-scroll md:overflow-auto">
+      <div className="bg-white dark:bg-blue-400 text-gray-400 p-[1rem] grid grid-flow-col gap-[3rem] auto-cols-max md:block overflow-scroll md:overflow-auto">
         <div className="md:mb-[1rem]">
           <h2>Airing</h2>
           <p className="text-sm font-thin">
