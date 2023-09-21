@@ -40,14 +40,14 @@ const AnimeDetailsPage = ({ params }: { params: { slug: string } }) => {
         synopsis={data?.data.synopsis}
       />
 
-      <div className="max-w-[90rem] w-[90%] mx-auto md:flex gap-[2rem]">
+      <div className="max-w-[90rem] w-[90%] mx-auto md:flex gap-[2rem] ">
         <DetailsSidebar data={data} />
 
         {displayType == undefined && (
-          <>
+          <div className="mt-[2rem] flex-1">
             <DetailsRelations data={data} />
-            <DetailsCharacters data={charactersData} />
-          </>
+            <DetailsCharacters data={charactersData} max={6} />
+          </div>
         )}
         {displayType == "watch" && <div>WATCH</div>}
         {displayType == "characters" && <div>CHARACTERS</div>}
