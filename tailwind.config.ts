@@ -31,6 +31,7 @@ const config: Config = {
         blue: {
           100: "#ACD5F2",
           150: "#3DB4F2",
+          175: "#02A9FF",
           200: "#3577FF",
           300: "#152232",
           400: "#151F2E",
@@ -42,6 +43,16 @@ const config: Config = {
           100: "#FEF0F0",
           200: "#F56C6C",
           300: "#EC294B",
+        },
+        lightGreen: {
+          100: "#68D639",
+        },
+        purple: {
+          100: "#9256F3",
+        },
+        pink: {
+          100: "#F779A4",
+          200: "#E85D75",
         },
       },
       backgroundImage: {

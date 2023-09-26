@@ -5,8 +5,14 @@ import {
   DetailsHero,
   DetailsRelations,
   DetailsSidebar,
+  DetailsStaff,
+  DetailsStats,
 } from "@/components/common";
-import { useFetchAnimeCharacters, useFetchAnimeStaff } from "@/hooks";
+import {
+  useFetchAnimeCharacters,
+  useFetchAnimeStaff,
+  useFetchAnimeStats,
+} from "@/hooks";
 import { useGetAnimeDetailsQuery } from "@/redux/features/animeApiSlice";
 import { Anime } from "@/types";
 import Image from "next/image";
@@ -21,12 +27,18 @@ const AnimeDetailsPage = ({ params }: { params: { slug: string } }) => {
     0,
     +animeId
   );
+  const { data: statsData, isLoading: statsLoading } = useFetchAnimeStats(
+    300,
+    +animeId
+  );
 
-  if (isLoading || charactersLoading || staffLoading) {
+  if (isLoading || charactersLoading || staffLoading || statsLoading) {
     return "Loading...";
   }
 
   const displayType = params.slug[2];
+
+  console.log(statsData);
 
   return (
     <div>
@@ -47,6 +59,8 @@ const AnimeDetailsPage = ({ params }: { params: { slug: string } }) => {
           <div className="mt-[2rem] flex-1">
             <DetailsRelations data={data} />
             <DetailsCharacters data={charactersData} max={6} />
+            <DetailsStaff data={staffData} max={3} />
+            <DetailsStats data={statsData} />
           </div>
         )}
         {displayType == "watch" && <div>WATCH</div>}
