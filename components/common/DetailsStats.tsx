@@ -27,10 +27,8 @@ const DetailsStats = ({ data }: Props) => {
   const droppedPercentage = (stats?.dropped / total) * 100;
   const planToWatchPercentage = (stats?.plan_to_watch / total) * 100;
 
-  console.log(stats.scores);
-
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-[2rem]">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-[2rem] mb-[3rem]">
       <div>
         <h2 className="mb-[1rem]">Status Distribution</h2>
 

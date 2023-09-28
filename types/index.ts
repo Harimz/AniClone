@@ -6,3 +6,4 @@ export type { default as AnimeStaffData } from "./animeStaff";
 export type { default as AnimeCharacter } from "./AnimeCharacter";
 export type { default as AnimeStatsData } from "./animeStats";
 export type { default as AnimeEpisodes } from "./AnimeEpisodes";
+export type { default as AnimeRecommendations } from "./animeRecommendations";

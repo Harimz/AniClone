@@ -9,9 +9,11 @@ import {
   DetailsStaff,
   DetailsStats,
 } from "@/components/common";
+import DetailsRecommendations from "@/components/common/DetailsRecommendations";
 import {
   useFetchAnimeCharacters,
   useFetchAnimeEpisodes,
+  useFetchAnimeRecommendations,
   useFetchAnimeStaff,
   useFetchAnimeStats,
 } from "@/hooks";
@@ -34,19 +36,23 @@ const AnimeDetailsPage = ({ params }: { params: { slug: string } }) => {
   const { data: episodesData, isLoading: episodesLoading } =
     useFetchAnimeEpisodes(2600, +animeId);
 
+  const { data: recData, isLoading: recLoading } = useFetchAnimeRecommendations(
+    3200,
+    +animeId
+  );
+
   if (
     isLoading ||
     charactersLoading ||
     staffLoading ||
     statsLoading ||
-    episodesLoading
+    episodesLoading ||
+    recLoading
   ) {
     return "Loading...";
   }
 
   const displayType = params.slug[2];
-
-  console.log(episodesData);
 
   return (
     <div>
@@ -70,6 +76,7 @@ const AnimeDetailsPage = ({ params }: { params: { slug: string } }) => {
             <DetailsStaff data={staffData} max={3} />
             <DetailsStats data={statsData} />
             <DetailsEpisodes data={episodesData} max={4} />
+            <DetailsRecommendations data={recData} />
           </div>
         )}
         {displayType == "watch" && <div>WATCH</div>}
