@@ -16,7 +16,7 @@ const DetailsStaff = ({ data, max }: Props) => {
   return (
     <>
       {max && <h2 className="font-semibold text-gray-400 mb-[1rem]">Staff</h2>}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-[2rem] auto-rows-min">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-[2rem] auto-rows-min mb-[3rem]">
         {staff?.map((staffMember) => (
           <StaffCard
             key={staffMember.person.mal_id}

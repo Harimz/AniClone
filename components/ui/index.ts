@@ -7,3 +7,6 @@ export { default as ContentCard } from "./cards/ContentCard";
 export { default as RelationsCard } from "./cards/RelationsCard";
 export { default as CharacterCard } from "./cards/CharacterCard";
 export { default as StaffCard } from "./cards/StaffCard";
+export { default as StatsBar } from "./details/StatsBar";
+export { default as ScoreBarGraph } from "./details/ScoreBarGraph";
+export { default as EpisodeCard } from "./cards/EpisodeCard";

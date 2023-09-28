@@ -8,3 +8,4 @@ export { default as DetailsCharacters } from "./DetailsCharacters";
 export { default as DetailsRelations } from "./DetailsRelations";
 export { default as DetailsStaff } from "./DetailsStaff";
 export { default as DetailsStats } from "./DetailsStats";
+export { default as DetailsEpisodes } from "./DetailsEpisodes";

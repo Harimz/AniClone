@@ -2,6 +2,7 @@
 
 import {
   DetailsCharacters,
+  DetailsEpisodes,
   DetailsHero,
   DetailsRelations,
   DetailsSidebar,
@@ -10,35 +11,42 @@ import {
 } from "@/components/common";
 import {
   useFetchAnimeCharacters,
+  useFetchAnimeEpisodes,
   useFetchAnimeStaff,
   useFetchAnimeStats,
 } from "@/hooks";
 import { useGetAnimeDetailsQuery } from "@/redux/features/animeApiSlice";
-import { Anime } from "@/types";
-import Image from "next/image";
 import React from "react";
 
 const AnimeDetailsPage = ({ params }: { params: { slug: string } }) => {
   const animeId = params.slug[0];
   const { data, isLoading, error } = useGetAnimeDetailsQuery(animeId);
   const { data: charactersData, isLoading: charactersLoading } =
-    useFetchAnimeCharacters(0, +animeId);
+    useFetchAnimeCharacters(2000, +animeId);
   const { data: staffData, isLoading: staffLoading } = useFetchAnimeStaff(
-    0,
+    2000,
     +animeId
   );
   const { data: statsData, isLoading: statsLoading } = useFetchAnimeStats(
-    300,
+    2000,
     +animeId
   );
+  const { data: episodesData, isLoading: episodesLoading } =
+    useFetchAnimeEpisodes(2600, +animeId);
 
-  if (isLoading || charactersLoading || staffLoading || statsLoading) {
+  if (
+    isLoading ||
+    charactersLoading ||
+    staffLoading ||
+    statsLoading ||
+    episodesLoading
+  ) {
     return "Loading...";
   }
 
   const displayType = params.slug[2];
 
-  console.log(statsData);
+  console.log(episodesData);
 
   return (
     <div>
@@ -61,6 +69,7 @@ const AnimeDetailsPage = ({ params }: { params: { slug: string } }) => {
             <DetailsCharacters data={charactersData} max={6} />
             <DetailsStaff data={staffData} max={3} />
             <DetailsStats data={statsData} />
+            <DetailsEpisodes data={episodesData} max={4} />
           </div>
         )}
         {displayType == "watch" && <div>WATCH</div>}

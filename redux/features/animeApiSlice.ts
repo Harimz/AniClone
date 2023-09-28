@@ -5,6 +5,7 @@ import {
   AnimeCharacterData,
   AnimeStaffData,
   AnimeStatsData,
+  AnimeEpisodes,
 } from "@/types";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
@@ -32,10 +33,10 @@ export const animeApi = createApi({
     getAnimeStatistics: builder.query<AnimeStatsData, any>({
       query: (id) => `/anime/${id}/statistics`,
     }),
-    getAnimeReviews: builder.query<Anime, any>({
-      query: (id) => `/anime/${id}/full`,
+    getAnimeEpisodes: builder.query<AnimeEpisodes, any>({
+      query: (id) => `/anime/${id}/videos/episodes`,
     }),
-    getAnimeEpisodes: builder.query<Anime, any>({
+    getAnimeReviews: builder.query<Anime, any>({
       query: (id) => `/anime/${id}/full`,
     }),
   }),
@@ -47,4 +48,5 @@ export const {
   useGetAnimeCharactersQuery,
   useGetAnimeStaffQuery,
   useGetAnimeStatisticsQuery,
+  useGetAnimeEpisodesQuery,
 } = animeApi;
