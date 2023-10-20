@@ -18,8 +18,8 @@ export type AnimeEntry = {
   };
 };
 
-interface AnimeRecommendations {
+interface AnimeRecommendationsData {
   data: AnimeEntry[];
 }
 
-export default AnimeRecommendations;
+export default AnimeRecommendationsData;

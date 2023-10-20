@@ -1,4 +1,4 @@
-import { AnimeCharacterData, AnimeStaffData } from "@/types";
+import { AnimeStaffData } from "@/types";
 import React from "react";
 import { CharacterCard, StaffCard } from "../ui";
 import { useRouter } from "next/navigation";

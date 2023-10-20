@@ -1,4 +1,4 @@
-type Anime = {
+type AnimeDetailsData = {
   data: {
     mal_id: number;
     url: string;
@@ -90,4 +90,4 @@ type ExternalType = {
   url: string;
 };
 
-export default Anime;
+export default AnimeDetailsData;

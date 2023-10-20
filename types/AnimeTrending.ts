@@ -126,7 +126,7 @@ type Pagination = {
   last_visible_page: number;
 };
 
-type TrendingAnimeResponse = {
+type TrendingAnimeResponseData = {
   data: Anime[];
   links: Links;
   meta: Meta;
@@ -225,4 +225,4 @@ type ExternalType = {
   url: string;
 };
 
-export default TrendingAnimeResponse;
+export default TrendingAnimeResponseData;

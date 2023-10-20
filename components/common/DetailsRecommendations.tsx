@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { AnimeRecommendations } from "@/types";
+import { AnimeRecommendationsData } from "@/types";
 import { RecommendedCard } from "../ui";
 
 interface Props {
-  data: AnimeRecommendations | null;
+  data: AnimeRecommendationsData | null;
 }
 
 const DetailsRecommendations = ({ data }: Props) => {
@@ -25,7 +25,7 @@ const DetailsRecommendations = ({ data }: Props) => {
         </h2>
       </div>
 
-      <div className="grid grid-cols-7 gap-[1.5rem]">
+      <div className="grid grid-cols-3 md:grid-cols-7 gap-[1.5rem]">
         {recommended?.map((entry) => (
           <RecommendedCard animeEntry={entry} />
         ))}

@@ -10,3 +10,5 @@ export { default as DetailsStaff } from "./DetailsStaff";
 export { default as DetailsStats } from "./DetailsStats";
 export { default as DetailsEpisodes } from "./DetailsEpisodes";
 export { default as DetailsRecommendations } from "./DetailsRecommendations";
+export { default as DetailsTrailer } from "./DetailsTrailer";
+export { default as DetailsEpisodesView } from "./DetailsEpisodesView";

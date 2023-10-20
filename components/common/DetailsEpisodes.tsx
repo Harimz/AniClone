@@ -1,17 +1,20 @@
-import { AnimeEpisodes } from "@/types";
+import { AnimeEpisodesData } from "@/types";
 import React from "react";
 import { EpisodeCard } from "../ui";
 import { useRouter } from "next/navigation";
 import { useParams } from "next/navigation";
 
 interface Props {
-  data: AnimeEpisodes | null;
+  data: AnimeEpisodesData | undefined;
   max?: number;
 }
 
 const DetailsEpisodes = ({ data, max }: Props) => {
-  const episodes = max ? data?.data.slice(0, max) : data?.data;
-  const router = useParams();
+  const episodes = data?.data;
+
+  if (!episodes) {
+    return "Loading...";
+  }
 
   return (
     <>

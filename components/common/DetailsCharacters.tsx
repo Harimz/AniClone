@@ -1,11 +1,11 @@
-import { AnimeCharacterData } from "@/types";
+import { AnimeCharactersData } from "@/types";
 import React from "react";
 import { CharacterCard } from "../ui";
 import { useRouter } from "next/navigation";
 import { useParams } from "next/navigation";
 
 interface Props {
-  data: AnimeCharacterData | null;
+  data: AnimeCharactersData | null;
   max?: number;
 }
 

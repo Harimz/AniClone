@@ -15,9 +15,9 @@ interface Pagination {
   has_next_page: boolean;
 }
 
-interface AnimeEpisodes {
+interface AnimeEpisodesData {
   data: AnimeEpisode[];
   pagination: Pagination;
 }
 
-export default AnimeEpisodes;
+export default AnimeEpisodesData;

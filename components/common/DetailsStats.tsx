@@ -1,5 +1,5 @@
-import { AnimeStaff } from "@/types/animeStaff";
-import AnimeStatsData, { AnimeStats } from "@/types/animeStats";
+import { AnimeStaff } from "@/types/AnimeStaff";
+import AnimeStatsData, { AnimeStats } from "@/types/AnimeStats";
 import React from "react";
 import { ScoreBarGraph, StatsBar } from "../ui";
 

@@ -1,9 +1,9 @@
 import React from "react";
-import { Anime } from "@/types";
+import { AnimeDetailsData } from "@/types";
 import { AiFillStar } from "react-icons/ai";
 
 interface Props {
-  data: Anime | undefined;
+  data: AnimeDetailsData | undefined;
 }
 
 const DetailsSidebar = ({ data }: Props) => {

@@ -1,15 +1,15 @@
-import { useGetAnimeRecommendationsQuery } from "@/redux/features/animeApiSlice";
-import { AnimeRecommendations } from "@/types";
+import { useGetTopAnimeByFilterQuery } from "@/redux/features/animeApiSlice";
+import { TrendingAnimeData } from "@/types";
 import { useState, useEffect } from "react";
 
-const useFetchAnimeRecommendations = (delay = 0, id: number) => {
-  const [data, setData] = useState<AnimeRecommendations | null>(null);
+const useFetchTopAnimeData = (delay = 0, filter: string) => {
+  const [data, setData] = useState<TrendingAnimeData | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [retryCount, setRetryCount] = useState(0);
 
   const maxRetries = 3;
 
-  const response = useGetAnimeRecommendationsQuery(id);
+  const response = useGetTopAnimeByFilterQuery(filter);
 
   const checkForRateLimitError = (error: any) => {
     return error && error.message === "Rate Limited";
@@ -40,4 +40,4 @@ const useFetchAnimeRecommendations = (delay = 0, id: number) => {
   return { data, isLoading };
 };
 
-export default useFetchAnimeRecommendations;
+export default useFetchTopAnimeData;

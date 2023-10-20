@@ -1,9 +1,7 @@
-export type { default as TrendingAnimeResponse } from "./trendingAnimeTypes";
-export type { default as Anime } from "./animeTypes";
-export type { default as AnimePicturesResponse } from "./animePictures";
-export type { default as AnimeCharacterData } from "./animeCharacters";
-export type { default as AnimeStaffData } from "./animeStaff";
-export type { default as AnimeCharacter } from "./AnimeCharacter";
-export type { default as AnimeStatsData } from "./animeStats";
-export type { default as AnimeEpisodes } from "./AnimeEpisodes";
-export type { default as AnimeRecommendations } from "./animeRecommendations";
+export type { default as AnimeDetailsData } from "./AnimeDetails";
+export type { default as AnimeRecommendationsData } from "./AnimeRecommendations";
+export type { default as AnimeStatsData } from "./AnimeStats";
+export type { default as AnimeEpisodesData } from "./AnimeEpisodes";
+export type { default as AnimeStaffData } from "./AnimeStaff";
+export type { default as AnimeCharactersData } from "./AnimeCharacters";
+export type { default as TrendingAnimeData } from "./AnimeTrending";

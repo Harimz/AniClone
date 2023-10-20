@@ -1,4 +1,4 @@
-import { AnimeEntry } from "@/types/animeRecommendations";
+import { AnimeEntry } from "@/types/AnimeRecommendations";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";

@@ -2,21 +2,21 @@
 
 import { Hero } from "@/components/common";
 import CardDisplay from "@/components/common/CardDisplay";
-import { useFetchAnimeData } from "@/hooks";
+import { useFetchAnimeData, useFetchTopAnimeData } from "@/hooks";
 
 export default function Home() {
-  const { data: airingData, isLoading: airingIsLoading } = useFetchAnimeData(
+  const { data: airingData, isLoading: airingIsLoading } = useFetchTopAnimeData(
     0,
     "upcoming"
   );
-  const { data: popData, isLoading: popIsLoading } = useFetchAnimeData(
+  const { data: popData, isLoading: popIsLoading } = useFetchTopAnimeData(
     800,
     "bypopularity"
   );
   const { data: upcomingData, isLoading: upcomingIsLoading } =
-    useFetchAnimeData(1200, "upcoming");
+    useFetchTopAnimeData(1200, "upcoming");
   const { data: favoriteData, isLoading: favoriteIsLoading } =
-    useFetchAnimeData(1800, "favorite");
+    useFetchTopAnimeData(1800, "favorite");
 
   return (
     <main>

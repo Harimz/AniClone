@@ -1,12 +1,11 @@
 import {
-  TrendingAnimeResponse,
-  Anime,
-  AnimePicturesResponse,
-  AnimeCharacterData,
+  AnimeCharactersData,
+  AnimeDetailsData,
+  AnimeEpisodesData,
+  AnimeRecommendationsData,
   AnimeStaffData,
   AnimeStatsData,
-  AnimeEpisodes,
-  AnimeRecommendations,
+  TrendingAnimeData,
 } from "@/types";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
@@ -16,16 +15,15 @@ export const animeApi = createApi({
   reducerPath: "animeApi",
   baseQuery: fetchBaseQuery({ baseUrl: "https://api.jikan.moe/v4/" }),
   endpoints: (builder) => ({
-    getTopAnimeByFilter: builder.query<
-      TrendingAnimeResponse,
-      GetTrendingAnimeArgs
-    >({
-      query: (filter) => `top/anime?filter=${filter}`,
-    }),
-    getAnimeDetails: builder.query<Anime, any>({
+    getTopAnimeByFilter: builder.query<TrendingAnimeData, GetTrendingAnimeArgs>(
+      {
+        query: (filter) => `top/anime?filter=${filter}`,
+      }
+    ),
+    getAnimeDetails: builder.query<AnimeDetailsData, any>({
       query: (id) => `/anime/${id}/full`,
     }),
-    getAnimeCharacters: builder.query<AnimeCharacterData, any>({
+    getAnimeCharacters: builder.query<AnimeCharactersData, any>({
       query: (id) => `/anime/${id}/characters`,
     }),
     getAnimeStaff: builder.query<AnimeStaffData, any>({
@@ -34,10 +32,10 @@ export const animeApi = createApi({
     getAnimeStatistics: builder.query<AnimeStatsData, any>({
       query: (id) => `/anime/${id}/statistics`,
     }),
-    getAnimeEpisodes: builder.query<AnimeEpisodes, any>({
+    getAnimeEpisodes: builder.query<AnimeEpisodesData, any>({
       query: (id) => `/anime/${id}/videos/episodes`,
     }),
-    getAnimeRecommendations: builder.query<AnimeRecommendations, any>({
+    getAnimeRecommendations: builder.query<AnimeRecommendationsData, any>({
       query: (id) => `/anime/${id}/recommendations`,
     }),
   }),

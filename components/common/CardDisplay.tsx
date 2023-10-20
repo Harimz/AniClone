@@ -1,4 +1,4 @@
-import { Anime } from "@/types/trendingAnimeTypes";
+import { Anime } from "@/types/AnimeTrending";
 import React from "react";
 import { ContentCard, Spinner } from "../ui";
 

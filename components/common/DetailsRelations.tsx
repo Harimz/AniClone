@@ -1,9 +1,9 @@
-import { Anime } from "@/types";
+import { AnimeDetailsData } from "@/types";
 import React from "react";
 import { RelationsCard } from "../ui";
 
 interface Props {
-  data: Anime | undefined;
+  data: AnimeDetailsData | undefined;
 }
 
 const DetailsRelations = ({ data }: Props) => {

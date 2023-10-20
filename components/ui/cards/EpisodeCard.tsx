@@ -11,13 +11,16 @@ const EpisodeCard = ({ episode }: Props) => {
     return;
   }
 
+  console.log(episode);
+
   return (
     <div className="relative h-[6.5rem]">
-      <Image src={episode?.images.jpg.image_url} alt={episode.title} fill />
-
-      <div className="absolute bg-[rgba(0,0,0,0.5)] p-[0.5rem] left-0 right-0 bottom-0">
-        <p className="truncate font-thin text-sm text-white">{episode.title}</p>
-      </div>
+      <Image
+        src={episode?.images.jpg.image_url || "/images/NoPhotoAvailable.png"}
+        alt={episode.title}
+        fill
+      />
+      <div></div>
     </div>
   );
 };
