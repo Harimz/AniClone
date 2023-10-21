@@ -38,6 +38,9 @@ export const animeApi = createApi({
     getAnimeRecommendations: builder.query<AnimeRecommendationsData, any>({
       query: (id) => `/anime/${id}/recommendations`,
     }),
+    getAnimeReviews: builder.query({
+      query: (id) => `/anime/${id}/reviews`,
+    }),
   }),
 });
 
@@ -49,4 +52,5 @@ export const {
   useGetAnimeStatisticsQuery,
   useGetAnimeEpisodesQuery,
   useGetAnimeRecommendationsQuery,
+  useGetAnimeReviewsQuery,
 } = animeApi;

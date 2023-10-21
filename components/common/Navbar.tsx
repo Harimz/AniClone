@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`hidden md:block absolute bg-darkPurple p-[1.25rem] dark:bg-blue-300 md:sticky left-0 right-0 top-0 z-10 transition-transform duration-300 ease-out ${navStyles}`}
+        className={`hidden md:block absolute bg-darkPurple p-[1.25rem] dark:bg-blue-300 md:sticky left-0 right-0 top-0 z-50 transition-transform duration-300 ease-out ${navStyles}`}
       >
         <div className="container mx-auto flex justify-between items-center">
           <Link href="/" passHref>

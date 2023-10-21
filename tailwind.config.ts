@@ -12,6 +12,9 @@ const config: Config = {
       boxShadow: {
         "blue-lg": "0 4px 14px 0 rgba(0, 118, 255, 0.39)",
       },
+      fontSize: {
+        xsm: ["10px", "10px"],
+      },
       colors: {
         darkBg: "#0B1622",
         darkPurple: "#2B2D42",

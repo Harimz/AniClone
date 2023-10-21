@@ -1,4 +1,4 @@
-import { AnimeCharacter, AnimeCharacterData } from "@/types";
+import { AnimeCharacter } from "@/types/AnimeCharacters";
 import Image from "next/image";
 import React from "react";
 
@@ -11,14 +11,19 @@ const CharacterCard = ({ character }: Props) => {
     return "Loading...";
   }
 
+  console.log(character);
+
   return (
     <div className="relative flex justify-between bg-white dark:bg-blue-400 text-gray-500 dark:text-gray-400">
       <div className="flex justify-between">
         <div className="relative w-[3.75rem] h-[5rem]">
           <Image
             fill
-            alt={character.character.name}
-            src={character.character.images.jpg.image_url}
+            alt={character.character.name || "Character Name"}
+            src={
+              character.character.images.jpg.image_url ||
+              "/images/defaultperson.jpg"
+            }
           />
         </div>
 
@@ -30,15 +35,18 @@ const CharacterCard = ({ character }: Props) => {
 
       <div className="flex">
         <div className="p-[0.5rem] flex flex-col justify-between text-sm font-thin text-end">
-          <h2>{character?.voice_actors[0].person.name}</h2>
-          <p>{character?.voice_actors[0].language}</p>
+          <h2>{character?.voice_actors[0]?.person.name}</h2>
+          <p>{character?.voice_actors[0]?.language}</p>
         </div>
 
         <div className="relative w-[3.75rem] h-[5rem]">
           <Image
             fill
-            alt={character.voice_actors[0].person.images.jpg.image_url}
-            src={character.voice_actors[0].person.images.jpg.image_url}
+            alt={character.voice_actors[0]?.person.name || "Voice Actor"}
+            src={
+              character.voice_actors[0]?.person.images.jpg.image_url ||
+              "/images/defaultperson.jpeg"
+            }
           />
         </div>
       </div>

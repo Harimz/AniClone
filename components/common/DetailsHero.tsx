@@ -12,9 +12,10 @@ interface Props {
   title: string | any;
   synopsis: string | any;
   image: string | any;
+  setDisplayType: (value: string) => void;
 }
 
-const DetailsHero = ({ title, synopsis, image }: Props) => {
+const DetailsHero = ({ title, synopsis, image, setDisplayType }: Props) => {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -78,37 +79,37 @@ const DetailsHero = ({ title, synopsis, image }: Props) => {
             <ul className="flex font-thin justify-center gap-[1rem] lg:gap-[4rem] overflow-scroll md:overflow-hidden mt-[2rem] text-gray-400 ">
               <li
                 className="cursor-pointer hover:text-blue-150"
-                onClick={() => updateUrl("")}
+                onClick={() => setDisplayType("")}
               >
                 Overview
               </li>
               <li
                 className="cursor-pointer hover:text-blue-150"
-                onClick={() => updateUrl("watch")}
+                onClick={() => setDisplayType("watch")}
               >
                 Watch
               </li>
               <li
                 className="cursor-pointer hover:text-blue-150"
-                onClick={() => updateUrl("characters")}
+                onClick={() => setDisplayType("characters")}
               >
                 Characters
               </li>
               <li
                 className="cursor-pointer hover:text-blue-150"
-                onClick={() => updateUrl("staff")}
+                onClick={() => setDisplayType("staff")}
               >
                 Staff
               </li>
               <li
                 className="cursor-pointer hover:text-blue-150"
-                onClick={() => updateUrl("reviews")}
+                onClick={() => setDisplayType("reviews")}
               >
                 Reviews
               </li>
               <li
                 className="cursor-pointer hover:text-blue-150"
-                onClick={() => updateUrl("stats")}
+                onClick={() => setDisplayType("stats")}
               >
                 Stats
               </li>

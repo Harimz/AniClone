@@ -11,3 +11,4 @@ export { default as StatsBar } from "./details/StatsBar";
 export { default as ScoreBarGraph } from "./details/ScoreBarGraph";
 export { default as EpisodeCard } from "./cards/EpisodeCard";
 export { default as RecommendedCard } from "./cards/RecommendedCard";
+export { default as ReviewsCard } from "./cards/ReviewsCard";

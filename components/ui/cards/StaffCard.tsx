@@ -13,7 +13,7 @@ const StaffCard = ({ staffMember }: Props) => {
   }
 
   return (
-    <div className="relative flex justify-between bg-white dark:bg-blue-400 text-gray-500 dark:text-gray-400">
+    <div className="relative flex justify-between bg-white dark:bg-blue-400 text-gray-500 dark:text-gray-400 max-w-[20rem]">
       <div className="flex justify-between">
         <div className="relative w-[3.75rem] h-[5rem]">
           <Image

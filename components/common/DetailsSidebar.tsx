@@ -10,7 +10,7 @@ const DetailsSidebar = ({ data }: Props) => {
   const animeDetails = data?.data;
 
   return (
-    <div className="mt-[2rem] md:w-[15rem]">
+    <div className="mt-[2rem] w-[15rem]">
       <div className="hidden md:block">
         <div className="bg-white dark:bg-blue-400 flex px-[1rem] py-[0.75rem] mb-[1.5rem]">
           <div className="text-yellow-300 mr-[1rem]">

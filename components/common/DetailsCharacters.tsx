@@ -13,6 +13,12 @@ const DetailsCharacters = ({ data, max }: Props) => {
   const characters = max ? data?.data.slice(0, max) : data?.data;
   const router = useParams();
 
+  if (!data) {
+    return "Loading...";
+  }
+
+  console.log(data);
+
   return (
     <>
       {max && (

@@ -10,7 +10,7 @@ interface Props {
 
 const DetailsRecommendations = ({ data }: Props) => {
   const [viewAll, setViewAll] = useState(false);
-  const recommended = viewAll ? data?.data : data?.data.slice(0, 7);
+  const recommended = viewAll ? data?.data : data?.data.slice(0, 14);
 
   return (
     <>

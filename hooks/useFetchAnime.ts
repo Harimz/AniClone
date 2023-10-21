@@ -5,8 +5,8 @@ import {
   useGetAnimeStaffQuery,
   useGetAnimeEpisodesQuery,
   useGetAnimeStatisticsQuery,
-  useGetTopAnimeByFilterQuery,
   useGetAnimeCharactersQuery,
+  useGetAnimeReviewsQuery,
 } from "@/redux/features/animeApiSlice";
 import {
   AnimeDetailsData,
@@ -15,6 +15,7 @@ import {
   AnimeStatsData,
   AnimeRecommendationsData,
   AnimeEpisodesData,
+  AnimeReviewsData,
 } from "@/types";
 
 type QueryTypeMap = {
@@ -24,6 +25,7 @@ type QueryTypeMap = {
   stats: AnimeStatsData;
   recommendations: AnimeRecommendationsData;
   episodes: AnimeEpisodesData;
+  reviews: AnimeReviewsData;
 };
 
 const queryHooksMap = {
@@ -33,6 +35,7 @@ const queryHooksMap = {
   stats: useGetAnimeStatisticsQuery,
   recommendations: useGetAnimeRecommendationsQuery,
   episodes: useGetAnimeEpisodesQuery,
+  reviews: useGetAnimeReviewsQuery,
 };
 
 const useFetchAnimeData = <T extends keyof QueryTypeMap>(

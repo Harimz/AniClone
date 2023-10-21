@@ -1,30 +1,35 @@
+"use client";
+
 import { AnimeStaffData } from "@/types";
 import React from "react";
-import { CharacterCard, StaffCard } from "../ui";
+import { CharacterCard, Spinner, StaffCard } from "../ui";
 import { useRouter } from "next/navigation";
 import { useParams } from "next/navigation";
+import { useFetchAnimeData } from "@/hooks";
 
 interface Props {
-  data: AnimeStaffData | null;
+  id: number;
   max?: number;
 }
 
-const DetailsStaff = ({ data, max }: Props) => {
-  const staff = max ? data?.data.slice(0, max) : data?.data;
+const DetailsStaff = ({ id, max }: Props) => {
+  const [staff, staffLoading] = useFetchAnimeData("staff", 0, id);
   const router = useParams();
 
-  return (
-    <>
-      {max && <h2 className="font-semibold text-gray-400 mb-[1rem]">Staff</h2>}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-[2rem] auto-rows-min mb-[3rem]">
-        {staff?.map((staffMember) => (
-          <StaffCard
-            key={staffMember.person.mal_id}
-            staffMember={staffMember}
-          />
-        ))}
+  if (!staff) {
+    return (
+      <div className="w-[100%] flex justify-center items-center h-[10vh] mt-[5rem] mb-[55rem]">
+        <Spinner />
       </div>
-    </>
+    );
+  }
+
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-[2rem] auto-rows-min mb-[3rem]">
+      {staff.data?.map((staffMember) => (
+        <StaffCard key={staffMember.person.mal_id} staffMember={staffMember} />
+      ))}
+    </div>
   );
 };
 

@@ -1,24 +1,22 @@
 "use client";
 
+import React, { useState } from "react";
 import {
   DetailsCharacters,
-  DetailsEpisodes,
-  DetailsEpisodesView,
   DetailsHero,
-  DetailsRelations,
+  DetailsReviews,
   DetailsSidebar,
   DetailsStaff,
-  DetailsStats,
   DetailsTrailer,
 } from "@/components/common";
 import DetailsRecommendations from "@/components/common/DetailsRecommendations";
 import { Spinner } from "@/components/ui";
 import { useFetchAnimeData } from "@/hooks";
-import React from "react";
 import ReactPlayer from "react-player";
 
 const AnimeDetailsPage = ({ params }: { params: { slug: string } }) => {
   const animeId = +params.slug[0];
+  const [displayType, setDisplayType] = useState("");
   const [detailsData, detsLoading] = useFetchAnimeData(
     "animeDetails",
     0,
@@ -31,13 +29,11 @@ const AnimeDetailsPage = ({ params }: { params: { slug: string } }) => {
   );
   const [recommendations, recLoading] = useFetchAnimeData(
     "recommendations",
-    4000,
+    0,
     animeId
   );
-  const [staff, staffLoading] = useFetchAnimeData("staff", 4000, animeId);
 
-  const isLoading =
-    !detailsData || !charactersData || !staff || !recommendations;
+  const isLoading = !detailsData || !charactersData || !recommendations;
   if (isLoading) {
     return (
       <div className="w-[100%] flex justify-center items-center h-[10vh] mt-[5rem] mb-[55rem]">
@@ -45,8 +41,6 @@ const AnimeDetailsPage = ({ params }: { params: { slug: string } }) => {
       </div>
     );
   }
-
-  const displayType = params.slug[2];
 
   return (
     <div>
@@ -58,15 +52,15 @@ const AnimeDetailsPage = ({ params }: { params: { slug: string } }) => {
         title={detailsData?.data.title}
         image={detailsData?.data.images.jpg.large_image_url}
         synopsis={detailsData?.data.synopsis}
+        setDisplayType={setDisplayType}
       />
 
       <div className="max-w-[90rem] w-[90%] mx-auto md:flex gap-[2rem] ">
         <DetailsSidebar data={detailsData} />
 
-        {displayType == undefined && (
+        {displayType == "" && (
           <div className="mt-[2rem] flex-1">
             <DetailsCharacters data={charactersData} max={6} />
-            <DetailsStaff data={staff} max={3} />
             <DetailsRecommendations data={recommendations} />
             <DetailsTrailer url={detailsData?.data.trailer.url} />
             <div className="max-w-[40rem] w-[100%] m-auto h-[40rem] mt-[3rem] mb-[15rem]">
@@ -80,9 +74,21 @@ const AnimeDetailsPage = ({ params }: { params: { slug: string } }) => {
           </div>
         )}
         {displayType == "watch" && <div></div>}
-        {displayType == "characters" && <div>CHARACTERS</div>}
-        {displayType == "staff" && <div>STAFF</div>}
-        {displayType == "reviews" && <div>REVIEWS</div>}
+        {displayType == "characters" && (
+          <div className="mt-[2rem]">
+            <DetailsCharacters data={charactersData} />
+          </div>
+        )}
+        {displayType == "staff" && (
+          <div className="mt-[2rem]">
+            <DetailsStaff id={animeId} />
+          </div>
+        )}
+        {displayType == "reviews" && (
+          <div className="mt-[2rem]">
+            <DetailsReviews id={animeId} />
+          </div>
+        )}
       </div>
     </div>
   );
