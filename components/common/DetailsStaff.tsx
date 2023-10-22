@@ -6,6 +6,7 @@ import { CharacterCard, Spinner, StaffCard } from "../ui";
 import { useRouter } from "next/navigation";
 import { useParams } from "next/navigation";
 import { useFetchAnimeData } from "@/hooks";
+import { AnimeStaff } from "@/types/AnimeStaff";
 
 interface Props {
   id: number;
@@ -26,7 +27,7 @@ const DetailsStaff = ({ id, max }: Props) => {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-[2rem] auto-rows-min mb-[3rem]">
-      {staff.data?.map((staffMember) => (
+      {staff.data?.map((staffMember: AnimeStaff) => (
         <StaffCard key={staffMember.person.mal_id} staffMember={staffMember} />
       ))}
     </div>
