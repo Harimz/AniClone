@@ -26,7 +26,7 @@ const DetailsRecommendations = ({ data }: Props) => {
       </div>
 
       <div className="grid grid-cols-3 md:grid-cols-7 gap-[1.5rem]">
-        {recommended?.map((entry) => (
+        {recommended?.map((entry: (typeof recommended)[0]) => (
           <RecommendedCard animeEntry={entry} />
         ))}
       </div>

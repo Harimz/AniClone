@@ -1,30 +1,34 @@
-import { AnimeEpisodesData } from "@/types";
+"use client";
+
 import React from "react";
 import { EpisodeCard } from "../ui";
-import { useRouter } from "next/navigation";
-import { useParams } from "next/navigation";
+import { useFetchAnimeData } from "@/hooks";
 
 interface Props {
-  data: AnimeEpisodesData | undefined;
-  max?: number;
+  id: number;
 }
 
-const DetailsEpisodes = ({ data, max }: Props) => {
-  const episodes = data?.data;
+const DetailsEpisodes = ({ id }: Props) => {
+  const [episodes] = useFetchAnimeData("episodes", 0, id);
 
   if (!episodes) {
     return "Loading...";
   }
 
+  console.log(episodes?.data);
+
   return (
-    <>
-      {max && <h2 className="font-semibold text-gray-400 mb-[1rem]">Watch</h2>}
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-[2rem] auto-rows-min mb-[3rem]">
-        {episodes?.map((episode) => (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[2rem] auto-rows-min mb-[3rem] mt-[2rem] ">
+      {episodes.data.length != 0 ? (
+        episodes?.data.map((episode) => (
           <EpisodeCard key={episode.mal_id} episode={episode} />
-        ))}
-      </div>
-    </>
+        ))
+      ) : (
+        <div>
+          <h1>No Episodes Found</h1>
+        </div>
+      )}
+    </div>
   );
 };
 

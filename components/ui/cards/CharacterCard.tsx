@@ -11,8 +11,6 @@ const CharacterCard = ({ character }: Props) => {
     return "Loading...";
   }
 
-  console.log(character);
-
   return (
     <div className="relative flex justify-between bg-white dark:bg-blue-400 text-gray-500 dark:text-gray-400">
       <div className="flex justify-between">

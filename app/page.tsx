@@ -82,6 +82,8 @@ export default function Home() {
             type="anime"
           />
         </div>
+
+        <div className=""></div>
       </div>
     </main>
   );

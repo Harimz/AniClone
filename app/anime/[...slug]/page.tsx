@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import {
   DetailsCharacters,
+  DetailsEpisodes,
   DetailsHero,
   DetailsReviews,
   DetailsSidebar,
@@ -73,7 +74,11 @@ const AnimeDetailsPage = ({ params }: { params: { slug: string } }) => {
             </div>
           </div>
         )}
-        {displayType == "watch" && <div></div>}
+        {displayType == "watch" && (
+          <div>
+            <DetailsEpisodes id={animeId} />
+          </div>
+        )}
         {displayType == "characters" && (
           <div className="mt-[2rem]">
             <DetailsCharacters data={charactersData} />

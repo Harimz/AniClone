@@ -14,7 +14,7 @@ const DetailsRelations = ({ data }: Props) => {
 
   return (
     <div className="">
-      {relations?.map((item) => {
+      {relations?.map((item: (typeof relations)[0]) => {
         const type = item.type;
         const data = item.items;
 

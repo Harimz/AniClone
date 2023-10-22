@@ -107,12 +107,6 @@ const DetailsHero = ({ title, synopsis, image, setDisplayType }: Props) => {
               >
                 Reviews
               </li>
-              <li
-                className="cursor-pointer hover:text-blue-150"
-                onClick={() => setDisplayType("stats")}
-              >
-                Stats
-              </li>
             </ul>
           </div>
         </div>

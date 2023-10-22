@@ -7,20 +7,20 @@ interface Props {
 }
 
 const EpisodeCard = ({ episode }: Props) => {
-  if (!episode) {
-    return;
-  }
-
   console.log(episode);
 
   return (
     <div className="relative h-[6.5rem]">
-      <Image
-        src={episode?.images.jpg.image_url || "/images/NoPhotoAvailable.png"}
-        alt={episode.title}
-        fill
-      />
-      <div></div>
+      <div className="relative h-[6.5rem] w-[100%] md:w-[15rem] lg:w-[23rem]">
+        <Image
+          src={episode?.images.jpg.image_url || "/images/NoPhotoAvailable.png"}
+          alt={episode?.title || ""}
+          fill
+        />
+      </div>
+      <div className="absolute bottom-0 left-0 right-0 top-15 bg-[rgba(0,0,0,0.5)] p-[.75rem]">
+        <p className="text-sm font-thin text-white">{episode?.title}</p>
+      </div>
     </div>
   );
 };
