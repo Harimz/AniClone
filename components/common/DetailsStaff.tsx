@@ -4,12 +4,25 @@ import React from "react";
 import { Spinner, StaffCard } from "../ui";
 import { useParams } from "next/navigation";
 import { useFetchAnimeData } from "@/hooks";
-import { AnimeStaff } from "../../types/AnimeStaff";
 
 interface Props {
   id: number;
   max?: number;
 }
+
+type AnimeStaff = {
+  person: {
+    mal_id: number;
+    url: string;
+    images: {
+      jpg: {
+        image_url: string;
+      };
+    };
+    name: string;
+  };
+  positions: string[];
+};
 
 const DetailsStaff = ({ id, max }: Props) => {
   const [staff, staffLoading] = useFetchAnimeData("staff", 0, id);
