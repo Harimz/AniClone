@@ -1,7 +1,7 @@
 import React from "react";
 
 import Image from "next/image";
-import type { AnimeStaff } from "@/types/AnimeStaff";
+import type { AnimeStaff } from "@/types/AnimeTypes";
 
 interface Props {
   staffMember: AnimeStaff | null;
