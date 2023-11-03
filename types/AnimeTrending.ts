@@ -133,7 +133,7 @@ type TrendingAnimeResponseData = {
   pagination: Pagination;
 };
 
-export type AnimeResponse = {
+type AnimeResponse = {
   data: {
     mal_id: number;
     url: string;

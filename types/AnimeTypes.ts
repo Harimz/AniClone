@@ -1,4 +1,4 @@
-type AnimeCharacter = {
+export type AnimeCharacter = {
   character: {
     mal_id: number;
     url: string;
@@ -30,8 +30,14 @@ type AnimeCharacter = {
   }[];
 };
 
-type AnimeCharactersData = {
-  data: AnimeCharacter[];
+export type AnimeEpisode = {
+  mal_id: number;
+  title: string;
+  episode: string;
+  url: string;
+  images: {
+    jpg: {
+      image_url: string;
+    };
+  };
 };
-
-export default AnimeCharactersData;
