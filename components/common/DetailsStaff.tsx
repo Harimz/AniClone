@@ -1,12 +1,10 @@
 "use client";
 
-import { AnimeStaffData } from "@/types";
 import React from "react";
-import { CharacterCard, Spinner, StaffCard } from "../ui";
-import { useRouter } from "next/navigation";
+import { Spinner, StaffCard } from "../ui";
 import { useParams } from "next/navigation";
 import { useFetchAnimeData } from "@/hooks";
-import { AnimeStaff } from "@/types/AnimeStaff";
+import { AnimeStaff } from "../../types/AnimeStaff";
 
 interface Props {
   id: number;
