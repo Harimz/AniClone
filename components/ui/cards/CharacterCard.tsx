@@ -1,6 +1,6 @@
-import { AnimeCharacter } from "@/types/AnimeCharacters";
 import Image from "next/image";
 import React from "react";
+import { type AnimeCharacter } from "@/types/AnimeCharacters";
 
 interface Props {
   character: AnimeCharacter | null;
