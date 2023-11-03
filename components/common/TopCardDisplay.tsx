@@ -1,7 +1,7 @@
 "use client";
 
 import { TrendingAnimeData } from "@/types";
-import { Anime } from "@/types/AnimeTrending";
+import { Anime } from "@/types/AnimeTypes";
 import React from "react";
 import { TopContentCard } from "../ui";
 import { AnimatePresence, motion } from "framer-motion";
