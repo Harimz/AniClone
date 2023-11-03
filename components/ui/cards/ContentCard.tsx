@@ -13,7 +13,7 @@ const ContentCard = ({ data, type }: Props) => {
 
   return (
     <Link href={`/${type}/${data.mal_id}/${title}`} passHref>
-      <div className="w-full sm:max-w-[15rem] cursor-pointer">
+      <div className="w-full sm:max-w-[13rem] cursor-pointer rounded-md overflow-hidden">
         <div className="relative w-full h-[10rem] sm:h-[20rem]">
           <Image
             layout="fill"

@@ -1,6 +1,6 @@
 "use client";
 
-import { Hero } from "@/components/common";
+import { Hero, TopCardDisplay } from "@/components/common";
 import CardDisplay from "@/components/common/CardDisplay";
 import { useFetchAnimeData, useFetchTopAnimeData } from "@/hooks";
 
@@ -75,15 +75,8 @@ export default function Home() {
             </h2>
             <p className="text-gray-450 text-sm">View All</p>
           </div>
-          <CardDisplay
-            data={favoriteData?.data}
-            max={6}
-            isLoading={favoriteIsLoading}
-            type="anime"
-          />
+          <TopCardDisplay data={favoriteData?.data} />
         </div>
-
-        <div className=""></div>
       </div>
     </main>
   );

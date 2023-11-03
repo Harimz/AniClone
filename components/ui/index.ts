@@ -12,4 +12,5 @@ export { default as ScoreBarGraph } from "./details/ScoreBarGraph";
 export { default as EpisodeCard } from "./cards/EpisodeCard";
 export { default as RecommendedCard } from "./cards/RecommendedCard";
 export { default as ReviewsCard } from "./cards/ReviewsCard";
-export { default as TopAnimeCard } from "./cards/TopAnimeCard";
+export { default as TopContentCard } from "./cards/TopContentCard";
+export { default as GenreCard } from "./cards/GenreCard";

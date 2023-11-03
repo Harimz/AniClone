@@ -20,8 +20,8 @@ const CardDisplay = ({ data, max, isLoading, type }: Props) => {
   }
 
   const fadeInUp = {
-    hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1 },
   };
 
   let displayData = [];
@@ -42,7 +42,7 @@ const CardDisplay = ({ data, max, isLoading, type }: Props) => {
             initial="hidden"
             animate="visible"
             exit="hidden"
-            transition={{ delay: index * 0.1, duration: 0.5 }}
+            transition={{ delay: index * 0.1, duration: 0.2 }}
           >
             <ContentCard data={item} type={type} />
           </motion.div>
