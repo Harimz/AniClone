@@ -6,7 +6,7 @@ type AnimeReviewsData = {
   };
 };
 
-export type ReviewItem = {
+type ReviewItem = {
   user: {
     username: string;
     url: string;

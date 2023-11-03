@@ -1,5 +1,5 @@
 import React from "react";
-import { Anime } from "@/types/AnimeTrending";
+import { Anime } from "@/types/AnimeTypes";
 import { ContentCard, Spinner } from "../ui";
 import { motion, AnimatePresence } from "framer-motion";
 

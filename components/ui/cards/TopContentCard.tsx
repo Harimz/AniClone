@@ -1,4 +1,4 @@
-import type { Anime } from "@/types/AnimeTrending";
+import type { Anime } from "@/types/AnimeTypes";
 import Image from "next/image";
 import React from "react";
 import { GenreCard } from "..";

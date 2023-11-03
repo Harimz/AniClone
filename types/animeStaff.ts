@@ -1,4 +1,4 @@
-export type AnimeStaff = {
+type AnimeStaff = {
   person: {
     mal_id: number;
     url: string;

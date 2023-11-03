@@ -1,4 +1,4 @@
-export type AnimeStats = {
+type AnimeStats = {
   watching: number;
   completed: number;
   on_hold: number;

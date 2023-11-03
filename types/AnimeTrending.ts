@@ -50,7 +50,7 @@ type Trailer = {
   images: Record<string, unknown>;
 };
 
-export type Anime = {
+type Anime = {
   aired: Aired;
   airing: boolean;
   approved: boolean;

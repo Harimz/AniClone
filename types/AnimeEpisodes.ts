@@ -1,4 +1,4 @@
-export type AnimeEpisode = {
+type AnimeEpisode = {
   mal_id: number;
   title: string;
   episode: string;

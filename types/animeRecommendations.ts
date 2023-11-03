@@ -1,4 +1,4 @@
-export type AnimeEntry = {
+type AnimeEntry = {
   entry: {
     mal_id: number;
     url: string;
