@@ -152,3 +152,17 @@ export type Anime = {
   url: string;
   year: number | null;
 };
+
+export type AnimeStaff = {
+  person: {
+    mal_id: number;
+    url: string;
+    images: {
+      jpg: {
+        image_url: string;
+      };
+    };
+    name: string;
+  };
+  positions: string[];
+};
