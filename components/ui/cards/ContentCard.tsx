@@ -1,5 +1,5 @@
 import React from "react";
-import type { Anime } from "@/types/AnimeTrending";
+import type { Anime } from "@/types/AnimeTypes";
 import Image from "next/image";
 import Link from "next/link";
 

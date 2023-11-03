@@ -1,4 +1,4 @@
-import type { AnimeEpisode } from "@/types/AnimeEpisodes";
+import type { AnimeEpisode } from "@/types/AnimeTypes";
 import Image from "next/image";
 import React from "react";
 
