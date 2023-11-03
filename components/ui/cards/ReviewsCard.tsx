@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ReviewItem } from "@/types/AnimeReviews";
+import type { ReviewItem } from "@/types/AnimeReviews";
 import Image from "next/image";
 import { FaThumbsUp } from "react-icons/fa";
 
