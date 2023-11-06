@@ -14,3 +14,4 @@ export { default as RecommendedCard } from "./cards/RecommendedCard";
 export { default as ReviewsCard } from "./cards/ReviewsCard";
 export { default as TopContentCard } from "./cards/TopContentCard";
 export { default as GenreCard } from "./cards/GenreCard";
+export { default as SearchMenu } from "./menus/SearchMenu";

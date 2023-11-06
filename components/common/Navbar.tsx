@@ -1,14 +1,17 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { MobileNav } from ".";
 import Image from "next/image";
-import { PrimaryButton } from "../ui";
+import { PrimaryButton, SearchMenu } from "../ui";
 import { useScrollDirection } from "@/hooks";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaPlay, FaBookOpen } from "react-icons/fa";
 
 const Navbar = () => {
   const { scrollDirection, beyondNavbar } = useScrollDirection();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   let navStyles = "translate-y-0";
 
@@ -38,7 +41,18 @@ const Navbar = () => {
           </Link>
 
           <div className="flex gap-[2rem]">
-            <button className="text-gray-300">Login</button>
+            <div
+              className="mr-[10rem] my-auto relative"
+              onMouseOver={() => setMenuOpen(true)}
+              onMouseOut={() => setMenuOpen(false)}
+            >
+              <button className="text-gray-400 font-light">Search</button>
+
+              <AnimatePresence>
+                {menuOpen && <SearchMenu setMenuOpen={setMenuOpen} />}
+              </AnimatePresence>
+            </div>
+            <button className="text-gray-400 font-light">Login</button>
             <PrimaryButton customStyles="rounded-lg transform transition-transform duration-200 hover:scale-105 focus:outline-none">
               Sign Up
             </PrimaryButton>

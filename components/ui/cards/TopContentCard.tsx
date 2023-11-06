@@ -2,6 +2,7 @@ import type { Anime } from "@/types/AnimeTypes";
 import Image from "next/image";
 import React from "react";
 import { GenreCard } from "..";
+import Link from "next/link";
 
 interface Props {
   data: Anime;
@@ -26,7 +27,11 @@ const TopAnimeCard = ({ data, index }: Props) => {
         </div>
 
         <div className="flex flex-col justify-center">
-          <h2 className="text-sm mb-[0.5rem]">{data.title}</h2>
+          <Link href={`/anime/${data.mal_id}`}>
+            <h2 className="text-sm mb-[0.5rem] cursor-pointer hover:text-white duration-[0.5s]">
+              {data.title}
+            </h2>
+          </Link>
           <div className="flex gap-[0.5rem]">
             {data.genres.map((genre) => (
               <GenreCard title={genre.name} key={genre.mal_id} color={index} />
