@@ -2,9 +2,10 @@ import React from "react";
 import { Anime } from "@/types/AnimeTypes";
 import { ContentCard, Spinner } from "../ui";
 import { motion, AnimatePresence } from "framer-motion";
+import { Manga } from "@/types/MangaTypes";
 
 interface Props {
-  data: Anime[] | undefined;
+  data: Anime[] | Manga[] | undefined;
   max?: number;
   isLoading: boolean;
   type: string;

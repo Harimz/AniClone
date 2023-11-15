@@ -1,0 +1,9 @@
+[
+  { "formatName": "Any", "formatId": "any" },
+  { "formatName": "TV", "formatId": "tv" },
+  { "formatName": "Movie", "formatId": "movie" },
+  { "formatName": "OVA", "formatId": "ova" },
+  { "formatName": "Special", "formatId": "special" },
+  { "formatName": "ONA", "formatId": "ona" },
+  { "formatName": "Music", "formatId": "music" }
+]

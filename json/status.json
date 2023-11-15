@@ -1,0 +1,6 @@
+[
+  { "statusName": "Any", "statusId": "0" },
+  { "statusName": "Airing", "statusId": "airing" },
+  { "statusName": "Complete", "statusId": "complete" },
+  { "statusName": "Upcoming", "statusId": "upcoming" }
+]

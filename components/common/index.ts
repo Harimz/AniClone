@@ -12,3 +12,4 @@ export { default as DetailsRecommendations } from "./DetailsRecommendations";
 export { default as DetailsTrailer } from "./DetailsTrailer";
 export { default as DetailsReviews } from "./DetailsReviews";
 export { default as TopCardDisplay } from "./TopCardDisplay";
+export { default as SearchBar } from "./SearchBar";

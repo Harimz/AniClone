@@ -48,7 +48,7 @@ const SearchMenu = ({ setMenuOpen }: Props) => {
         </div>
 
         <div>
-          <Link href="/" passHref>
+          <Link href="/search/anime" passHref>
             <h2 className="text-normal text-gray-400 hover:text-gray-300">
               Anime
             </h2>
@@ -67,7 +67,7 @@ const SearchMenu = ({ setMenuOpen }: Props) => {
         </div>
 
         <div>
-          <Link href="/" passHref>
+          <Link href="/search/manga" passHref>
             <h2 className="text-normal text-gray-400 hover:text-gray-300">
               Manga
             </h2>

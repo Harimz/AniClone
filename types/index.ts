@@ -6,3 +6,7 @@ export type { default as AnimeStaffData } from "./AnimeStaff";
 export type { default as AnimeCharactersData } from "./AnimeCharacters";
 export type { default as TrendingAnimeData } from "./AnimeTrending";
 export type { default as AnimeReviewsData } from "./AnimeReviews";
+export type { default as TrendingMangaResponseData } from "./MangaTrending";
+export type { default as MangaDetailsData } from "./MangaDetails";
+export type { default as MangaCharactersData } from "./MangaCharacters";
+export type { default as MangaRecommendationsData } from "./MangaRecommendations";

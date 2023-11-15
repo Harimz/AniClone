@@ -2,9 +2,10 @@ import React from "react";
 import type { Anime } from "@/types/AnimeTypes";
 import Image from "next/image";
 import Link from "next/link";
+import { Manga } from "@/types/MangaTypes";
 
 interface Props {
-  data: Anime;
+  data: Anime | Manga;
   type: string;
 }
 
