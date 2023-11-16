@@ -1,15 +1,18 @@
 "use client";
 
 import React from "react";
-import { useFetchAnimeData } from "@/hooks";
+import { useFetchAnimeData, useFetchMangaData } from "@/hooks";
 import { ReviewsCard, Spinner } from "../ui";
 
 interface Props {
   id: number;
+  type: string;
 }
 
-const DetailsReviews = ({ id }: Props) => {
-  const [reviews] = useFetchAnimeData("reviews", 0, id);
+const DetailsReviews = ({ id, type }: Props) => {
+  const [animeReviews] = useFetchAnimeData("reviews", 0, id);
+  const [mangaReviews] = useFetchMangaData("reviews", 0, id);
+  const reviews = type == "anime" ? animeReviews : mangaReviews;
 
   if (!reviews) {
     return (

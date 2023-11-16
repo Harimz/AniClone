@@ -54,6 +54,7 @@ const AnimeDetailsPage = ({ params }: { params: { slug: string } }) => {
         image={detailsData?.data.images.jpg.large_image_url}
         synopsis={detailsData?.data.synopsis}
         setDisplayType={setDisplayType}
+        type="anime"
       />
 
       <div className="max-w-[90rem] w-[90%] mx-auto md:flex gap-[2rem] ">
@@ -91,7 +92,7 @@ const AnimeDetailsPage = ({ params }: { params: { slug: string } }) => {
         )}
         {displayType == "reviews" && (
           <div className="mt-[2rem]">
-            <DetailsReviews id={animeId} />
+            <DetailsReviews id={animeId} type="anime" />
           </div>
         )}
       </div>

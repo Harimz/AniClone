@@ -1,16 +1,16 @@
+import { MangaDetailsData } from "@/types";
 import React from "react";
-import { AnimeDetailsData, MangaDetailsData } from "@/types";
 import { AiFillStar } from "react-icons/ai";
 
 interface Props {
-  data: AnimeDetailsData | undefined;
+  data: MangaDetailsData | undefined;
 }
 
-const DetailsSidebar = ({ data }: Props) => {
+const DetailsMangaSidebar = ({ data }: Props) => {
   const details = data?.data;
 
   return (
-    <div className="mt-[2rem] w-[15rem]">
+    <div className="mt-[2rem] w-[15rem] mb-[15rem]">
       <div className="hidden md:block">
         <div className="bg-white dark:bg-blue-400 flex px-[1rem] py-[0.75rem] mb-[1.5rem]">
           <div className="text-yellow-300 mr-[1rem]">
@@ -35,9 +35,9 @@ const DetailsSidebar = ({ data }: Props) => {
 
       <div className="bg-white dark:bg-blue-400 text-gray-400 p-[1rem] grid grid-flow-col gap-[3rem] auto-cols-max md:block overflow-scroll md:overflow-auto">
         <div className="md:mb-[1rem]">
-          <h2>Airing</h2>
+          <h2>Publishing</h2>
           <p className="text-sm font-thin">
-            {details?.airing ? details?.broadcast.string : "No"}
+            {details?.publishing ? "Yes" : "No"}
           </p>
         </div>
         <div className="md:mb-[1rem]">
@@ -50,7 +50,7 @@ const DetailsSidebar = ({ data }: Props) => {
         </div>
         <div className="md:mb-[1rem]">
           <h2>Start Date</h2>
-          <p className="text-sm font-thin">{details?.aired.from}</p>
+          <p className="text-sm font-thin">{details?.published.from}</p>
         </div>
         <div className="md:mb-[1rem]">
           <h2>Average Score</h2>
@@ -63,23 +63,8 @@ const DetailsSidebar = ({ data }: Props) => {
           <p className="text-sm font-thin">{details?.favorites}</p>
         </div>
         <div className="md:mb-[1rem]">
-          <h2>Studios</h2>
-          <p className="text-sm font-thin">
-            {" "}
-            {details?.studios.map((item) => `${item.name}\n`)}
-          </p>
-        </div>
-        <div className="md:mb-[1rem]">
-          <h2>Producers</h2>
-          <div className="text-sm font-thin flex md:block gap-[.5rem]">
-            {details?.producers.map((item) => (
-              <p key={item.mal_id}>{item.name}</p>
-            ))}
-          </div>
-        </div>
-        <div className="md:mb-[1rem]">
-          <h2>Source</h2>
-          <p className="text-sm font-thin">{details?.source}</p>
+          <h2>Volumes</h2>
+          <p className="text-sm font-thin">{details?.volumes}</p>
         </div>
         <div className="md:mb-[1rem]">
           <h2>Genres</h2>
@@ -110,4 +95,4 @@ const DetailsSidebar = ({ data }: Props) => {
   );
 };
 
-export default DetailsSidebar;
+export default DetailsMangaSidebar;

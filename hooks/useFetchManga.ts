@@ -2,11 +2,13 @@ import {
   useGetMangaCharactersQuery,
   useGetMangaDetailsQuery,
   useGetMangaRecommendationsQuery,
+  useGetMangaReviewsQuery,
 } from "@/redux/features/mangaApiSlice";
 import {
   MangaCharactersData,
   MangaDetailsData,
   MangaRecommendationsData,
+  MangaReviewsData,
 } from "@/types";
 import React, { useEffect, useState } from "react";
 
@@ -14,12 +16,14 @@ type QueryTypeMap = {
   mangaDetails: MangaDetailsData;
   recommendations: MangaRecommendationsData;
   characters: MangaCharactersData;
+  reviews: MangaReviewsData;
 };
 
 const queryHooksMap = {
   mangaDetails: useGetMangaDetailsQuery,
   recommendations: useGetMangaRecommendationsQuery,
   characters: useGetMangaCharactersQuery,
+  reviews: useGetMangaReviewsQuery,
 };
 
 const useFetchMangaData = <T extends keyof QueryTypeMap>(

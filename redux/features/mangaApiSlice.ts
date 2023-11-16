@@ -2,6 +2,7 @@ import {
   MangaCharactersData,
   MangaDetailsData,
   MangaRecommendationsData,
+  MangaReviewsData,
   TrendingMangaResponseData,
 } from "@/types";
 import { Manga } from "@/types/MangaTypes";
@@ -25,6 +26,9 @@ export const mangaApi = createApi({
     getMangaRecommendations: builder.query<MangaRecommendationsData, any>({
       query: (id) => `/manga/${id}/recommendations`,
     }),
+    getMangaReviews: builder.query<MangaReviewsData, any>({
+      query: (id) => `/manga/${id}/reviews`,
+    }),
   }),
 });
 
@@ -33,4 +37,5 @@ export const {
   useGetMangaDetailsQuery,
   useGetMangaRecommendationsQuery,
   useGetMangaCharactersQuery,
+  useGetMangaReviewsQuery,
 } = mangaApi;

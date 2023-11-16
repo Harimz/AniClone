@@ -13,3 +13,4 @@ export { default as DetailsTrailer } from "./DetailsTrailer";
 export { default as DetailsReviews } from "./DetailsReviews";
 export { default as TopCardDisplay } from "./TopCardDisplay";
 export { default as SearchBar } from "./SearchBar";
+export { default as DetailsMangaSidebar } from "./DetailsMangaSidebar";

@@ -3,6 +3,7 @@
 import {
   DetailsCharacters,
   DetailsHero,
+  DetailsMangaSidebar,
   DetailsRecommendations,
   DetailsReviews,
   DetailsSidebar,
@@ -55,10 +56,11 @@ const MangaDetailsPage = ({ params }: { params: { slug: string } }) => {
         image={detailsData?.data.images.jpg.large_image_url}
         synopsis={detailsData?.data.synopsis}
         setDisplayType={setDisplayType}
+        type="manga"
       />
 
-      {/* <div className="max-w-[90rem] w-[90%] mx-auto md:flex gap-[2rem] ">
-        <DetailsSidebar data={detailsData} />
+      <div className="max-w-[90rem] w-[90%] mx-auto md:flex gap-[2rem] ">
+        <DetailsMangaSidebar data={detailsData} />
 
         {displayType == "" && (
           <div className="mt-[2rem] flex-1">
@@ -66,23 +68,18 @@ const MangaDetailsPage = ({ params }: { params: { slug: string } }) => {
             <DetailsRecommendations data={recommendations} />
           </div>
         )}
-        {displayType == "watch" && <div></div>}
+        {/* {displayType == "watch" && <div></div>} */}
         {displayType == "characters" && (
-          <div className="mt-[2rem]">
+          <div className="mt-[2rem] flex-1">
             <DetailsCharacters data={charactersData} />
-          </div>
-        )}
-        {displayType == "staff" && (
-          <div className="mt-[2rem]">
-            <DetailsStaff id={animeId} />
           </div>
         )}
         {displayType == "reviews" && (
           <div className="mt-[2rem]">
-            <DetailsReviews id={animeId} />
+            <DetailsReviews id={mangaId} type="manga" />
           </div>
         )}
-      </div> */}
+      </div>
     </div>
   );
 };

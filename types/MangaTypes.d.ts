@@ -74,3 +74,36 @@ export type Manga = {
   themes: Genre[];
   demographics: Genre[];
 };
+
+export type MangaCharacterData = {
+  character: {
+    mal_id: number;
+    url: string;
+    images: {
+      jpg: {
+        image_url: string;
+        small_image_url: string;
+      };
+      webp: {
+        image_url: string;
+        small_image_url: string;
+      };
+    };
+    name: string;
+  };
+  role: string;
+};
+
+export type MangaReviewItem = {
+  user: UserData;
+  mal_id: number;
+  url: string;
+  type: string;
+  reactions: ReactionData;
+  date: string;
+  review: string;
+  score: number;
+  tags: string[];
+  is_spoiler: boolean;
+  is_preliminary: boolean;
+};

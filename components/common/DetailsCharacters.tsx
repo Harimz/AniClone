@@ -1,9 +1,9 @@
-import { AnimeCharactersData } from "@/types";
+import { AnimeCharactersData, MangaCharactersData } from "@/types";
 import React from "react";
 import { CharacterCard } from "../ui";
 
 interface Props {
-  data: AnimeCharactersData | null;
+  data: AnimeCharactersData | MangaCharactersData | null;
   max?: number;
 }
 

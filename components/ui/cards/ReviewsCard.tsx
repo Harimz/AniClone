@@ -4,9 +4,10 @@ import React, { useState } from "react";
 import type { ReviewItem } from "@/types/AnimeTypes";
 import Image from "next/image";
 import { FaThumbsUp } from "react-icons/fa";
+import { MangaReviewItem } from "@/types/MangaTypes";
 
 interface Props {
-  review: ReviewItem;
+  review: ReviewItem | MangaReviewItem;
 }
 
 const ReviewsCard = ({ review }: Props) => {

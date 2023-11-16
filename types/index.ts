@@ -10,3 +10,4 @@ export type { default as TrendingMangaResponseData } from "./MangaTrending";
 export type { default as MangaDetailsData } from "./MangaDetails";
 export type { default as MangaCharactersData } from "./MangaCharacters";
 export type { default as MangaRecommendationsData } from "./MangaRecommendations";
+export type { default as MangaReviewsData } from "./MangaReviews";
