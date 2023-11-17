@@ -7,8 +7,6 @@ interface Props {
 }
 
 const EpisodeCard = ({ episode }: Props) => {
-  console.log(episode);
-
   return (
     <div className="relative h-[6.5rem]">
       <div className="relative h-[6.5rem] w-[100%] md:w-[15rem] lg:w-[23rem]">

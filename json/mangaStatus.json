@@ -1,0 +1,8 @@
+[
+  { "statusName": "Any", "statusId": "0" },
+  { "statusName": "Publishing", "statusId": "publishing" },
+  { "statusName": "Complete", "statusId": "complete" },
+  { "statusName": "Upcoming", "statusId": "upcoming" },
+  { "statusName": "Hiatus", "statusId": "hiatus" },
+  { "statusName": "Discontinued", "statusId": "discontinued" }
+]

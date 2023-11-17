@@ -12,9 +12,6 @@ interface Props {
 const TopAnimeCard = ({ data, index }: Props) => {
   const title = data.title.replace(/\s+/g, "-");
 
-  console.log(data.members);
-  console.log(data.score);
-
   return (
     <div className="bg-white dark:bg-blue-400 text-gray-500 dark:text-gray-400 flex flex-1 p-[0.75rem] justify-between">
       <div className="flex gap-[1rem]">

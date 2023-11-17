@@ -15,7 +15,6 @@ const TopCardDisplay = ({ data }: Props) => {
   if (!data) {
     return "Loading...";
   }
-  console.log(data);
 
   const fadeInUp = {
     hidden: { opacity: 0, scale: 0.9 },

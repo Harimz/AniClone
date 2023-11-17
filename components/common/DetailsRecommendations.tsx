@@ -6,9 +6,10 @@ import { RecommendedCard } from "../ui";
 
 interface Props {
   data: AnimeRecommendationsData | null;
+  type: string;
 }
 
-const DetailsRecommendations = ({ data }: Props) => {
+const DetailsRecommendations = ({ data, type = "anime" }: Props) => {
   const [viewAll, setViewAll] = useState(false);
   const recommended = viewAll ? data?.data : data?.data.slice(0, 14);
 
@@ -27,7 +28,7 @@ const DetailsRecommendations = ({ data }: Props) => {
 
       <div className="grid grid-cols-3 md:grid-cols-7 gap-[1.5rem]">
         {recommended?.map((entry: (typeof recommended)[0]) => (
-          <RecommendedCard animeEntry={entry} />
+          <RecommendedCard animeEntry={entry} type={type} />
         ))}
       </div>
     </>

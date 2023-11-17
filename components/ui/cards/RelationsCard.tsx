@@ -8,8 +8,6 @@ interface Props {
 }
 
 const RelationsCard = ({ type, photo, id }: Props) => {
-  // console.log(photo);
-
   return (
     <div className="relative">
       {/* <Image layout="fill" alt={type} src={photo} /> */}

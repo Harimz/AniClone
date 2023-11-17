@@ -54,9 +54,9 @@ const SearchMenu = ({ setMenuOpen }: Props) => {
             </h2>
           </Link>
           <div className="flex gap-[1rem]">
-            <MenuLink href="/" text="Top 100" />
-            <MenuLink href="/" text="Trending" />
-            <MenuLink href="/" text="Top Movies" />
+            <MenuLink href="/search/anime/top-100" text="Top 100" />
+            <MenuLink href="/search/anime/trending" text="Trending" />
+            <MenuLink href="/search/anime/top-movies" text="Top Movies" />
           </div>
         </div>
       </div>
@@ -73,9 +73,9 @@ const SearchMenu = ({ setMenuOpen }: Props) => {
             </h2>
           </Link>
           <div className="flex gap-[1rem]">
-            <MenuLink href="/" text="Top 100" />
-            <MenuLink href="/" text="Trending" />
-            <MenuLink href="/" text="Top Manhwa" />
+            <MenuLink href="/search/manga/top-100" text="Top 100" />
+            <MenuLink href="/search/manga/trending" text="Trending" />
+            <MenuLink href="/search/manga/top-manhwa" text="Top Manhwa" />
           </div>
         </div>
       </div>

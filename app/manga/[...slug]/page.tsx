@@ -43,8 +43,6 @@ const MangaDetailsPage = ({ params }: { params: { slug: string } }) => {
     );
   }
 
-  console.log(detailsData.data.images);
-
   return (
     <div>
       <div className="relative h-[15rem] md:h-[20rem]">
@@ -65,7 +63,7 @@ const MangaDetailsPage = ({ params }: { params: { slug: string } }) => {
         {displayType == "" && (
           <div className="mt-[2rem] flex-1">
             <DetailsCharacters data={charactersData} max={6} />
-            <DetailsRecommendations data={recommendations} />
+            <DetailsRecommendations data={recommendations} type="manga" />
           </div>
         )}
         {/* {displayType == "watch" && <div></div>} */}

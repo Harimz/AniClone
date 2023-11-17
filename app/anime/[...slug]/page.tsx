@@ -63,7 +63,7 @@ const AnimeDetailsPage = ({ params }: { params: { slug: string } }) => {
         {displayType == "" && (
           <div className="mt-[2rem] flex-1">
             <DetailsCharacters data={charactersData} max={6} />
-            <DetailsRecommendations data={recommendations} />
+            <DetailsRecommendations data={recommendations} type="anime" />
             <DetailsTrailer url={detailsData?.data.trailer.url} />
             <div className="max-w-[40rem] w-[100%] m-auto h-[40rem] mt-[3rem] mb-[15rem]">
               <ReactPlayer

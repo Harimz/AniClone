@@ -5,9 +5,10 @@ import React from "react";
 
 interface Props {
   animeEntry: AnimeEntry | null;
+  type: string;
 }
 
-const RecommendedCard = ({ animeEntry }: Props) => {
+const RecommendedCard = ({ animeEntry, type }: Props) => {
   const title = animeEntry?.entry.title.replace(/\s+/g, "-");
 
   if (!animeEntry) {
@@ -15,7 +16,7 @@ const RecommendedCard = ({ animeEntry }: Props) => {
   }
 
   return (
-    <Link href={`/anime/${animeEntry?.entry.mal_id}/${title}`} passHref>
+    <Link href={`/${type}/${animeEntry?.entry.mal_id}/${title}`} passHref>
       <div className="w-full sm:max-w-[15rem] cursor-pointer">
         <div className="relative w-full h-[10rem] sm:h-[13rem]">
           <Image

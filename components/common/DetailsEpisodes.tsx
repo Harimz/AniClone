@@ -15,8 +15,6 @@ const DetailsEpisodes = ({ id }: Props) => {
     return "Loading...";
   }
 
-  console.log(episodes?.data);
-
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[2rem] auto-rows-min mb-[3rem] mt-[2rem] ">
       {episodes.data.length != 0 ? (

@@ -1,0 +1,9 @@
+[
+  { "formatName": "Any", "formatId": "any" },
+  { "formatName": "Manga", "formatId": "manga" },
+  { "formatName": "Novel", "formatId": "novel" },
+  { "formatName": "Light Novel", "formatId": "lightnovel" },
+  { "formatName": "oneshot", "formatId": "oneshot" },
+  { "formatName": "Doujin", "formatId": "doujin" },
+  { "formatName": "Manhwa", "formatId": "manhwa" }
+]

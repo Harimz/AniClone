@@ -29,6 +29,12 @@ export const mangaApi = createApi({
     getMangaReviews: builder.query<MangaReviewsData, any>({
       query: (id) => `/manga/${id}/reviews`,
     }),
+    getMangaSearchResults: builder.query({
+      query: (queryString) => `/manga${queryString}`,
+    }),
+    getTopManhwa: builder.query<TrendingMangaResponseData, any>({
+      query: (queryString) => `/top/manga?type=manhwa`,
+    }),
   }),
 });
 
@@ -38,4 +44,6 @@ export const {
   useGetMangaRecommendationsQuery,
   useGetMangaCharactersQuery,
   useGetMangaReviewsQuery,
+  useGetMangaSearchResultsQuery,
+  useGetTopManhwaQuery,
 } = mangaApi;
