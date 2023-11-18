@@ -3,6 +3,8 @@ import { Anime } from "@/types/AnimeTypes";
 import { ContentCard, Spinner } from "../ui";
 import { motion, AnimatePresence } from "framer-motion";
 import { Manga } from "@/types/MangaTypes";
+import TrendingAnimeResponseData from "@/types/AnimeTrending";
+import { TrendingMangaResponseData } from "@/types";
 
 interface Props {
   data: Anime[] | Manga[] | undefined;

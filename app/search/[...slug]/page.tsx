@@ -36,7 +36,9 @@ const SearchPage = ({ params }: { params: { slug: string } }) => {
 
   const loadDefault = !shouldFetch;
 
-  console.log(params.slug[1]);
+  if (isLoading || mangaIsLoading) {
+    return "Loading..";
+  }
 
   if (params.slug[1] == "top-100") {
     return (
